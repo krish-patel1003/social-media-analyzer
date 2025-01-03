@@ -6,6 +6,8 @@ import pandas as pd
 
 st.set_page_config(page_title="Social Media Analyzer", layout="wide")
 
+BASE_URL = "https://social-media-analyzer-d2t0.onrender.com"
+
 def main():
     st.title("Social Media Analytics Dashboard")
     
@@ -15,14 +17,14 @@ def main():
     
     if st.sidebar.button("Generate New Data"):
         response = requests.post(
-            "http://localhost:8000/generate-data",
+            f"{BASE_URL}/generate-data",
             params={"num_records": num_records}
         )
         st.sidebar.success(response.json()["message"])
     
     # Main content
     if st.button("Analyze Data"):
-        response = requests.get("http://localhost:8000/analyze")
+        response = requests.get(f"{BASE_URL}/analyze")
         data = response.json()
         
         # Create multiple columns for different visualizations
