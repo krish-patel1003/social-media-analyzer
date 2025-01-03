@@ -1,0 +1,8 @@
+astrapy
+fastapi
+pydantic_settings
+pydantic
+requests
+plotly
+streamlit
+textblob
