@@ -1,5 +1,5 @@
 astrapy
-fastapi
+fastapi[standard]
 pydantic_settings
 pydantic
 requests
